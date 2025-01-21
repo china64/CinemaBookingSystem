@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myproject.cinemabookingsystem_backend.mapper.MovieMapper">
+    <!-- 查詢所有用戶 -->
+    <select id="viewAll" resultType="com.myproject.cinemabookingsystem_backend.model.Movie">
+        SELECT * FROM `movie`;
+    </select>
+
+    <!-- 根據 ID 查詢用戶 -->
+    <select id="findById" parameterType="int" resultType="com.myproject.cinemabookingsystem_backend.model.Movie">
+        SELECT * FROM `movie` WHERE id = #{id};
+    </select>
+
+    <!-- 新上片電影 -->
+    <insert id="newMovie" parameterType="com.myproject.cinemabookingsystem_backend.model.Movie">
+        INSERT INTO `Movie` (moviename,roomway)
+        VALUES (#{moviename},#{roomway});
+    </insert>
+
+
+    <!-- 更新電影信息 -->
+    <update id="updateMovie" parameterType="com.myproject.cinemabookingsystem_backend.model.Movie">
+        UPDATE `Movie`
+        SET moviename = #{moviename}, phone = #{roomway}, email = #{bookable}
+        WHERE id = #{id};
+    </update>
+
+</mapper>
