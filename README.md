@@ -20,7 +20,7 @@
 
 ### 2. 克隆專案
 ```sh
-git clone https://github.com/你的GitHub帳號/CinemaBookingSystem_Backend.git
+git clone https://github.com/china64/CinemaBookingSystem_Backend.git
 cd CinemaBookingSystem_Backend
 ```
 
