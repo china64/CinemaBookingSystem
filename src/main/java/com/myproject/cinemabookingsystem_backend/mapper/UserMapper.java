@@ -14,4 +14,5 @@ public interface UserMapper {
     void updateUser(User user);//更新使用者
     int deleteById(Integer id);//刪除使用者
     User LoginByAccount(User user);
+    Boolean checkAccountOnly(String account);
 }

@@ -39,5 +39,13 @@
         SELECT * FROM `user` WHERE account=#{account} AND password=#{password};
     </select>
 
+    <!-- 檢查帳號是否已存在 -->
+    <select id="checkAccountOnly" parameterType="string" resultType="boolean">
+        SELECT CASE WHEN COUNT(*) > 0 THEN TRUE ELSE FALSE END
+        FROM `user`
+        WHERE account = #{account};
+    </select>
+
+
 
 </mapper>

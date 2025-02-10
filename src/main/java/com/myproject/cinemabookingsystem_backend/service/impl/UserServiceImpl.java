@@ -27,8 +27,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void insertUser(User user) {
-		userMapper.insertUser(user);
-		
+		if (userMapper.checkAccountOnly(user.getAccount())) {
+			throw new RuntimeException("帳號已被使用，請選擇其他帳號！");
+		} else {
+			userMapper.insertUser(user);
+		}
 	}
 
 	@Override

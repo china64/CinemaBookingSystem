@@ -9,9 +9,6 @@ public class User {
     private String account;
     private String email;
     private String password;
-
-
-
     private String name;
     private int role;
 
